@@ -1,4 +1,4 @@
-package class7;
+package class7.exs1;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

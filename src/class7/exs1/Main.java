@@ -1,4 +1,4 @@
-package class7;
+package class7.exs1;
 import java.util.List;
 
 public class Main {

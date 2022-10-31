@@ -1,4 +1,4 @@
-package class7;
+package class7.exs1;
 
 public class Taxi implements Vehicle{
     @Override

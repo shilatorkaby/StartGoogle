@@ -1,6 +1,6 @@
-package class7;
+package class7.exs1;
 
-public class Bus implements Vehicle{
+public class Boat implements Vehicle{
     @Override
     public void transport(Passenger passenger) {
         System.out.println("Passenger's name: "+passenger.name);
