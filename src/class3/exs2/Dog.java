@@ -21,23 +21,13 @@ public class Dog extends AnimalAbstract {
         }
 
         @Override
-        public Dog mate(Animal animal) {
+        public Dog mate() {
             return (new Dog(gender,randomId(),randomWight()));
         }
 
         @Override
         public String getAnimal() {
             return "dog";
-        }
-
-        @Override
-        public void setId(int Id) {
-            id=Id;
-        }
-
-        @Override
-        public void setGender(Gender gender_) {
-            gender=gender_;
         }
 
         public Gender mateGender ()
@@ -47,7 +37,15 @@ public class Dog extends AnimalAbstract {
             return (Gender.FEMALE);
         }
 
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "gender=" + gender +
+                ", id=" + id +
+                ", weight=" + weight +
+                '}';
     }
+}
 
 
 

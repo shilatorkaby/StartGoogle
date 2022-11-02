@@ -22,7 +22,7 @@ public class Farm {
                 animalList.put(animal, new Cow(g, animal.randomId(), animal.randomWight()));
             break;
             }
-            case "ponyHorse": {
+            case "horse": {
                 animalList.put(animal, new Horse(g, animal.randomId(), animal.randomWight()));
             break;
             }
@@ -39,15 +39,16 @@ public class Farm {
 
     Animal provideAnimal(int id) //It can provide Animals to outside users.
     {
-        for (HashMap.Entry<Animal, Animal> entry : animalList.entrySet()) {
-            if (entry.getValue().getId() == id) {
+       for (HashMap.Entry<Animal, Animal> entry : animalList.entrySet()) {
+            if (entry.getValue() !=null && entry.getValue().getId() == id) {
                 return entry.getValue();
-            } else if (entry.getKey().getId() == id) {
+            } else if (entry.getKey() !=null &&entry.getKey().getId() == id) {
                 return entry.getKey();
             }
         }
         return null;
     }
+
 
     void printAnimal(Animal animal)
     {
@@ -55,10 +56,12 @@ public class Farm {
 
     }
     void printAll() {
+        System.out.println("\n");
         for (HashMap.Entry<Animal, Animal> entry : animalList.entrySet()) {
             System.out.println("Mate1:");
             printAnimal(entry.getKey());
             if (entry.getValue() != null) {
+                System.out.println("Mate2:");
                 printAnimal(entry.getValue());
             } else {
                 System.out.println("NO MATE ANIMAL\n");

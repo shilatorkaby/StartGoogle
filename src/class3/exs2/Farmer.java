@@ -32,7 +32,7 @@ public class Farmer{
         return null;
     }
 
-    public void printAnimal(Animal animal){}
+    public void printAnimal(Animal animal){System.out.println(animal);}
 public void printAll(){farm.printAll();}
 
 }

@@ -3,13 +3,13 @@ package class3.exs2;
 import java.util.concurrent.ThreadLocalRandom;
 
 interface Animal {
+    String toString();
     void move();
-    Animal mate(Animal animal);
+    Animal mate();
     String getAnimal();
-    void setId(int Id);
 
     int getId();
-    void setGender(AnimalAbstract.Gender gender);
+
     AnimalAbstract.Gender getGender();
 
     default int randomId() // Generate random id number

@@ -1,14 +1,24 @@
 package class3.exs2;
 
-import class3.exs2.Animal;
-import class3.exs2.AnimalAbstract;
-import class3.exs2.Cow;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Horse extends AnimalAbstract {
-        public Horse(Gender genderA,int idA,float weightA) {
-            gender= genderA;
-            id=idA;
-            weight=weightA;
+
+    public Horse() {
+        gender= Gender.values()[ThreadLocalRandom.current().nextInt(Gender.values().length)];
+        id=randomId();
+        weight=randomWight();
+    }
+    public Horse(int id,double weight) {
+        gender= Gender.values()[ThreadLocalRandom.current().nextInt(Gender.values().length)];
+        this.id=id;
+        this.weight=weight;
+    }
+
+    public Horse(Gender gender, int id, float weight) {
+            this.gender= gender;
+            this.id=id;
+            this.weight=weight;
         }
 
         @Override
@@ -25,7 +35,7 @@ public class Horse extends AnimalAbstract {
         }
 
         @Override
-        public class3.exs2.Cow mate(Animal animal) {
+        public class3.exs2.Cow mate() {
             return (new class3.exs2.Cow(gender,randomId(),randomWight()));
         }
 
@@ -34,15 +44,6 @@ public class Horse extends AnimalAbstract {
             return "horse";
         }
 
-        @Override
-        public void setId(int Id) {
-            id=Id;
-        }
-
-        @Override
-        public void setGender(Gender gender_) {
-            gender=gender_;
-        }
 
     public Gender mateGender ()
     {
@@ -51,6 +52,14 @@ public class Horse extends AnimalAbstract {
         return (Gender.FEMALE);
     }
 
+    @Override
+    public String toString() {
+        return "Horse{" +
+                "gender=" + gender +
+                ", id=" + id +
+                ", weight=" + weight +
+                '}';
+    }
 }
 
 

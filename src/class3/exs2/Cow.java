@@ -17,7 +17,7 @@ public class Cow extends AnimalAbstract{
     }
 
     @Override
-    public Cow mate(Animal animal) {
+    public Cow mate() {
 
         return (new Cow(gender,randomId(),randomWight()));
 
@@ -33,20 +33,19 @@ public class Cow extends AnimalAbstract{
         return id;
     }
 
-    @Override
-    public void setId(int Id) {
-        id=Id;
-    }
-
-    @Override
-    public void setGender(Gender gender_) {
-        gender=gender_;
-    }
-
     public Gender mateGender ()
     {
         if (gender== Gender.FEMALE)
             return (Gender.MALE);
         return (Gender.FEMALE);
+    }
+
+    @Override
+    public String toString() {
+        return "Cow{" +
+                "gender=" + gender +
+                ", id=" + id +
+                ", weight=" + weight +
+                '}';
     }
 }
